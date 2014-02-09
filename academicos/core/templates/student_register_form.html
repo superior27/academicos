@@ -1,0 +1,404 @@
+		{% extends 'base.html' %}
+		{% block navbar %}
+							<li >
+                            <a href="/">Início</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/register">Cadastro de Usuários    </a>
+
+                        </li>
+
+                        <li class="active" >
+                            <a href="/student_register">Cadastro de Alunos</a>
+                        </li>
+                        <li>
+                            <a href="/teacher_register">Cadastro de Professores</a>
+                        </li>
+
+                         <li >
+                            <a href="/class_register">Cadastro de Disciplinas</a>
+                        </li>
+                         <li >
+                            <a href="/grade_register">Cadastro de Turmas</a>
+                        </li>
+                         <li >
+                            <a href="/matriculation_register">Matrícula</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/logout/">Sair</a>
+                        </li>
+		{% endblock navbar %}
+
+		{% block content %}
+		
+			<h2>
+				<center>Cadastro de Aluno</center>
+			</h2>
+			<legend> </legend>
+			
+			<form action="." method="POST">
+				{% csrf_token %}
+			<center>
+				<legend> </legend>
+				<h3>Dados do Aluno</h3>
+
+
+				<div class = "control-group">  
+					<label class = "control-label" for="{{ form.name.id_for_label }}">*Nome:</label>
+					<div class="controls">
+						{{ form.name }}
+						{{ form.name.errors }}
+					</div>
+				</div>
+
+
+				<div class = "control-group">  
+					<label class = "control-label" for="{{ form.matriculation_number.id_for_label }}">*Número de Matrícula:
+					</label>
+					<div class="controls">
+						{{ form.matriculation_number }}
+						{{ form.matriculation_number.errors }}
+					</div>
+				</div>
+
+
+				<div class = "control-group">
+				<label class = "control-label" for="{{ form.date_birth.id_for_label }}">*Data de Nascimento:</label>			
+				<div class="controls">
+				{{ form.date_birth }}
+				{{ form.date_birth.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.gender.id_for_label }}">*Sexo:</label>
+				<div class="controls">
+				{{ form.gender }}
+				{{ form.gender.errors }}
+				</div>
+				</div>
+
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.street.id_for_label }}">*Endereço:</label>
+				<div class="controls">
+				{{ form.street }}
+				{{ form.street.errors }}
+				</div>
+				</div>
+
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.street_number.id_for_label }}">*Número:</label>
+				<div class="controls">
+				{{ form.street_number }}
+				{{ form.street_number.errors }}
+				</div>
+				</div>
+					
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.street_complement.id_for_label }}">Complemento:</label>
+				<div class="controls">
+				{{ form.street_complement }}
+				{{ form.street_complement.errors }}
+				</div>
+				</div>
+					
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.neighborhood.id_for_label }}">*Bairro:</label>
+				<div class="controls">
+				{{ form.neighborhood }}
+				{{ form.neighborhood.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.city.id_for_label }}">*Cidade:</label>
+				<div class="controls">
+				{{ form.city }}
+				{{ form.city.errors }}
+				</div>
+				</div>
+					
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.state.id_for_label }}">*Estado:</label>
+				<div class="controls">
+				{{ form.state }}
+				{{ form.state.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.postal_code.id_for_label }}">*CEP:</label>
+				<div class="controls">
+				{{ form.postal_code }}
+				{{ form.postal_code.errors }}
+				</div>
+				</div>
+					
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.phone.id_for_label }}">*Telefone:</label>
+				<div class="controls">
+				{{ form.phone }}
+				{{ form.phone.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.allergy.id_for_label }}">Alergias:</label>
+				<div class="controls">
+				{{ form.allergy }}
+				{{ form.allergy.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.health_plan.id_for_label }}">Plano de Saúde:</label>
+				<div class="controls">
+				{{ form.health_plan }}
+				{{ form.health_plan.errors }}
+				</div>
+				</div>
+				
+				<br/>
+				<legend></legend>
+				<h3>Dados de Emergência</h3>
+				<legend></legend>
+				<br>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.emergency_name.id_for_label }}">*Nome para Emergência:</label>
+				<div class="controls">
+				{{ form.emergency_name }}
+				{{ form.emergency_name.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.emergency_phone.id_for_label }}">*Telefone para Emergência:</label>
+				<div class="controls">
+				{{ form.emergency_phone }}
+				{{ form.emergency_phone.errors }}
+				</div>
+				</div>
+
+				<br>
+  				<legend></legend>
+				<h3>Dados do Pai</h3>
+			  	<legend></legend>
+			  	<br>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.father_name.id_for_label }}">Nome do Pai:</label>
+				<div class="controls">
+				{{ form.father_name }}
+				{{ form.father_name.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.father_phone.id_for_label }}">Telefone do Pai:</label>
+				<div class="controls">
+				{{ form.father_phone }}
+				{{ form.father_phone.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.father_rg.id_for_label }}">RG do Pai:</label>
+				<div class="controls">
+				{{ form.father_rg }}
+				{{ form.father_rg.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.father_cpf.id_for_label }}">CPF do Pai:</label>
+				<div class="controls">
+				{{ form.father_cpf }}
+				{{ form.father_cpf.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.father_profession.id_for_label }}">Profissão do Pai:</label>
+				<div class="controls">
+				{{ form.father_profession }}
+				{{ form.father_profession.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.father_instruction.id_for_label }}">Grau de Instrução do Pai:</label>
+				<div class="controls">
+				{{ form.father_instruction }}
+				{{ form.father_instruction.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.father_date_birth.id_for_label }}">Data de Nascimento do Pai:</label>
+				<div class="controls">
+				{{ form.father_date_birth }}
+				{{ form.father_date_birth.errors }}
+				</div>
+				</div>
+
+				<br>
+			  	<legend></legend>
+				<h3>Dados da Mãe:</h3>
+			  	<legend></legend>
+			  	<br>
+					
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.mother_name.id_for_label }}">*Nome da Mãe:</label>
+				<div class="controls">
+				{{ form.mother_name }}
+				{{ form.mother_name.errors }}
+				</div>
+				</div>
+					
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.mother_phone.id_for_label }}">*Telefone da Mãe:</label>
+				<div class="controls">
+				{{ form.mother_phone }}
+				{{ form.mother_phone.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.mother_rg.id_for_label }}">*RG da Mãe:</label>
+				<div class="controls">
+				{{ form.mother_rg }}
+				{{ form.mother_rg.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.mother_cpf.id_for_label }}">*CPF da Mãe:</label>
+				<div class="controls">
+				{{ form.mother_cpf }}
+				{{ form.mother_cpf.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.mother_profession.id_for_label }}">*Profissão da Mãe:</label>
+				<div class="controls">
+				{{ form.mother_profession }}
+				{{ form.mother_profession.errors }}
+				</div>
+				</div>
+
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.mother_instruction.id_for_label }}">*Grau de Instrução da Mãe:</label>
+				<div class="controls">
+				{{ form.mother_instruction }}
+				{{ form.mother_instruction.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.mother_date_birth.id_for_label }}">*Data de Nascimento da Mãe:</label>
+				<div class="controls">
+				{{ form.mother_date_birth }}
+				{{ form.mother_date_birth.errors }}
+				</div>
+				</div>
+
+				<br>
+			  	<legend></legend>
+				<h3>Dados do Responsável Financeiro</h3>
+			  	<legend></legend>
+			  	<br>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.responsible_financial_name.id_for_label }}">*Nome do Responsável Financeiro:</label>
+				<div class="controls">
+				{{ form.responsible_financial_name }}
+				{{ form.responsible_financial_name.errors }}
+				</div>
+				</div>
+					
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.responsible_financial_phone.id_for_label }}">*Telefone do Responsável Financeiro:</label>
+				<div class="controls">
+				{{ form.responsible_financial_phone }}
+				{{ form.responsible_financial_phone.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.responsible_financial_rg.id_for_label }}">*RG do Responsável Financeiro:</label>
+				<div class="controls">
+				{{ form.responsible_financial_rg }}
+				{{ form.responsible_financial_rg.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.responsible_financial_cpf.id_for_label }}">*CPF do Responsável Financeiro:</label>
+				<div class="controls">
+				{{ form.responsible_financial_cpf }}
+				{{ form.responsible_financial_cpf.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.responsible_financial_date_birth.id_for_label }}">*Data de Nascimento do Responsável Financeiro:</label>
+				<div class="controls">
+				{{ form.responsible_financial_date_birth }}
+				{{ form.responsible_financial_date_birth.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.responsible_financial_email.id_for_label }}">E-mail do Responsável Financeiro:</label>
+				<div class="controls">
+				{{ form.responsible_financial_email }}
+				{{ form.responsible_financial_email.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.observation.id_for_label }}">Observações:</label>
+				<div class="controls">
+				{{ form.observation }}
+				{{ form.observation.errors }}
+				</div>
+				</div>
+
+					<div class = "control-group">
+				<label class = "control-label" for="{{ form.user.id_for_label }}">*Nome do Usuário:</label>
+				<div class="controls">
+				{{ form.user }}
+				{{ form.user.errors }}
+				</div>
+				</div>
+
+
+
+				<br> <br>
+              
+				<button type="submit" class="btn btn-primary">Efetuar cadastro</button>
+				
+				<br><br>
+
+			</center>
+			</form>
+			{% endblock content %}

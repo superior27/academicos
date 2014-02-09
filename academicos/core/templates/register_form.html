@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+{% if form.errors %}
+	{{ form.non_field_erros }}
+{% endif %} 
+
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootstrap.responsive.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/new.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/teste.css" rel="stylesheet">   
+        <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet"> 
+  <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+  	<div class="container">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="nav-collapse collapse bs-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/">Início</a>
+                        </li>
+                        
+                        <li class="active">
+                            <a href="/register">Cadastro de Usuários    </a>
+
+                        </li>
+
+                        <li >
+                            <a href="/student_register">Cadastro de Alunos</a>
+                        </li>
+                        <li>
+                            <a href="/teacher_register">Cadastro de Professores</a>
+                        </li>
+
+                         <li >
+                            <a href="/class_register">Cadastro de Disciplinas</a>
+                        </li>
+                         <li >
+                            <a href="/grade_register">Cadastro de Turmas</a>
+                        </li>
+                         <li >
+                            <a href="/matriculation_register">Matrícula</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/logout/">Sair</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+  </div>
+
+<div class="bs-header">
+            <div class="container">
+               <img src = "{{ STATIC_URL }}img/Academicos.jpg" />
+
+                <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div> <center><img src = "{{ STATIC_URL }}img/logo.jpg" /> </div></div>
+
+            </div>
+        </div>
+
+
+  
+  <center>
+<h2>Formulário de Cadastro</h2>
+  <legend></legend>
+		
+<form action="." method="POST">
+	{% csrf_token %}
+ 
+
+	<div class = "control-group">
+		<label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+		<div class="controls">
+		{{ form.username }}
+
+		{{ form.username.errors}}
+	
+	</div>
+	</div>
+
+
+<div class = "control-group">
+		<label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+		<div class="controls">
+		{{ form.email }}
+		{{ form.email.errors}}
+		</div>
+	</div>
+
+	
+<div class = "control-group">
+		<label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}:</label>
+		<div class="controls">
+		{{ form.first_name }}
+		{{ form.first_name.errors }}
+	</div>
+	</div>
+
+	
+<div class = "control-group">
+		<label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}:</label>
+		<div class="controls">
+		{{ form.last_name }}
+		{{ form.last_name.errors }}
+	</div>
+	</div>
+
+	
+<div class = "control-group">
+		<label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}:</label>
+		<div class="controls">
+		{{ form.password1 }}
+		{{ form.password1.errors }}
+		</div>
+	</div>
+
+
+	<div class = "control-group">
+		<label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}:</label>
+		<div class="controls">
+		{{ form.password2 }}
+		{{ form.password2.errors }}
+	</div>
+	</div>
+
+    <div class = "control-group">
+        <label for="{{ form.permissions.id_for_label }}">Tipo de Usuário:</label>
+        <div class="controls">
+        {{ form.permissions }}
+        {{ form.permissions.errors }}
+    </div>
+    </div>
+
+
+<br>
+<button type="submit" class="btn btn-primary">Enviar</button>
+<p></p>

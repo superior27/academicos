@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+	<title>Academicos</title>
+	
+</head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootstrap.responsive.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/new.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/teste.css" rel="stylesheet">   
+        <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">  
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+  </div>
+<div class="bs-header">
+            <div class="container">
+         
+    
+	<h1>Bem Vindo ao Acadêmicos</h1>
+	<p>Sistema acadêmico para escolas</p>
+    <br>
+    <br>
+	
+                <div id="carbonads-container">
+
+                	<div class="carbonad">
+                		<div id="azcarbon">
+                        {% if form.errors %}
+                        Seu usuário e senha não conferem. Tente novamente.
+                        {% endif %}
+                        <form action="" method="post">
+                        {% csrf_token %}
+                        <center>
+                        {{form.username.label_tag}}
+                        {{form.username}}
+                        <br><br><br>
+                        {{form.password.label_tag}}
+                        {{form.password}}
+
+                        <br><br><br>
+                        <a href="" > <button  type="submit" class="btn btn-primary">Entrar no Sistema</button> </a>
+                        </center>
+                    </form>
+
+                		</div> <center>
+                        
+
+                	</div>
+                </div>
+
+            </div>
+        </div>
+
+<center><img src = "{{ STATIC_URL }}img/logo.jpg" /></div>
+
+<div class="container">
+               
+                    <footer class="bs-footer">
+                       <div class="bs-social">
+                           <p>Criado por CommSystem - Lucas Lins e Jean Turet</p>
+                                    <p>Todos os direitos Reservados 
+                                        <br><a>Site</a>
+                                </div>
+                          <footer/>
+                      
+                  </div>

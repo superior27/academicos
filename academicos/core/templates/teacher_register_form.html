@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block navbar %}
+	<li >
+                            <a href="/">Início</a>
+                        </li>
+                        
+                        <li >
+                            <a href="/register">Cadastro de Usuários    </a>
+
+                        </li>
+
+                        <li>
+                            <a href="/student_register">Cadastro de Alunos</a>
+                        </li>
+                        <li class="active">
+                            <a href="/teacher_register">Cadastro de Professores</a>
+                        </li>
+
+                         <li >
+                            <a href="/class_register">Cadastro de Disciplinas</a>
+                        </li>
+                         <li >
+                            <a href="/grade_register">Cadastro de Turmas</a>
+                        </li>
+                         <li >
+                            <a href="/matriculation_register">Matrícula</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/logout/">Sair</a>
+                        </li>
+
+{% endblock navbar %}
+
+{% block content %}
+
+	<h2>
+		<center>Cadastro de Professor</center>
+	</h2>
+	<legend> </legend>
+
+	<form action="." method="POST">
+		{% csrf_token %}
+		<center>
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.name.id_for_label }}">*Nome:</label>
+				<div class="controls">
+					{{ form.name }}
+					{{ form.name.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.date_birth.id_for_label }}">*Data de Nascimento:</label>
+				<div class="controls">
+					{{ form.date_birth }}
+					{{ form.date_birth.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.rg.id_for_label }}">*RG:</label>
+				<div class="controls">
+					{{ form.rg }}
+					{{ form.rg.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.cpf.id_for_label }}">*CPF:</label>
+				<div class="controls">
+					{{ form.cpf }}
+					{{ form.cpf.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.phone.id_for_label }}">*Telefone:</label>
+				<div class="controls">
+					{{ form.phone }}
+					{{ form.phone.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.email.id_for_label }}">*E-mail:</label>
+				<div class="controls">
+					{{ form.email }}
+					{{ form.email.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.user.id_for_label }}">*Nome do Usuário:</label>
+				<div class="controls">
+					{{ form.user }}
+					{{ form.user.errors }}
+				</div>
+			</div>
+
+			<br> <br>
+              
+			<button type="submit" class="btn btn-primary">Efetuar cadastro</button>
+				
+			<br><br>
+
+		</center>
+	</form>
+			
+			{% endblock content %}

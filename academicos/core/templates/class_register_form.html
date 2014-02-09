@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block navbar %}
+	 <li >
+                            <a href="/">Início</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/register">Cadastro de Usuários    </a>
+
+                        </li>
+
+                        <li >
+                            <a href="/student_register">Cadastro de Alunos</a>
+                        </li>
+                        <li>
+                            <a href="/teacher_register">Cadastro de Professores</a>
+                        </li>
+
+                         <li class="active">
+                            <a href="/class_register">Cadastro de Disciplinas</a>
+                        </li>
+                         <li>
+                            <a href="/grade_register">Cadastro de Turmas</a>
+                        </li>
+                         <li>
+                            <a href="/matriculation_register">Matrícula</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/logout/">Sair</a>
+                        </li>
+
+{% endblock navbar %}
+
+{% block content %}
+
+	<h2>
+		<center>Cadastro de Disciplinas</center>
+	</h2>
+	<legend> </legend>
+
+	<form action="." method="POST">
+		{% csrf_token %}
+		<center>
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.name.id_for_label }}">*Nome da Disciplina:</label>
+				<div class="controls">
+					{{ form.name }}
+					{{ form.name.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.Teacher.id_for_label }}">*Nome do professor:</label>
+				<div class="controls">
+					{{ form.teacher }}
+					{{ form.teacher.errors }}
+				</div>
+			</div>
+
+			
+			<br> <br>
+              
+			<button type="submit" class="btn btn-primary">Efetuar cadastro</button>
+				
+			<br><br>
+
+		</center>
+	</form>
+			
+			{% endblock content %}
