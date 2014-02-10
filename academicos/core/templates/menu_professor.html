@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block navbar %}
+	
+                         <li>
+                            <a href="/">Início</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/menu_aluno">Aluno</a>
+
+                        </li>
+
+                        <li >
+                            <a href="/menu_adm">Administração</a>
+                        </li>
+                        <li class="active">
+                            <a href="/menu_professor">Professor</a>
+                        </li>
+
+                         <li>
+                            <a href="/menu_secretaria">Secretaria</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/logout/">Sair</a>
+                        </li>
+                    
+{% endblock navbar %}
+
+{% block content %}
+
+	<h2>
+		<center>Bem Vindo {{user.username}}</center>
+	</h2>
+	<legend> </legend>
+<center>
+    <h3>
+	<div class="container bs-docs-container">
+            <div class="row">
+                <div class="col-lg-16">
+                    <div class="bs-sidebar">
+                        <ul class="nav bs-sidenav">
+                            <li>                  
+                                <a href="/lista_disciplina_professor">Visualizar Disciplinas</a>
+                            </li>
+                           
+
+                        </ul>
+                    </div>
+                </div>
+
+<div class="container"> 
+</h3>
+</center>
+	
+			{% endblock content %}

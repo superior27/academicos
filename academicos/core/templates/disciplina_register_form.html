@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block navbar %}
+	<li >
+                            <a href="/">Início</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/register">Cadastro de Usuários    </a>
+
+                        </li>
+
+                        <li >
+                            <a href="/student_register">Cadastro de Alunos</a>
+                        </li>
+                        <li>
+                            <a href="/teacher_register">Cadastro de Professores</a>
+                        </li>
+
+                         <li >
+                            <a href="/class_register">Cadastro de Disciplinas</a>
+                        </li>
+                         <li >
+                            <a href="/grade_register">Cadastro de Turmas</a>
+                        </li>
+                         <li class="active">
+                            <a href="/matriculation_register">Matrícula</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/logout/">Sair</a>
+                        </li>
+
+{% endblock navbar %}
+
+{% block content %}
+
+	<h2>
+		<center>Cadastro de Turmas</center>
+	</h2>
+	<legend> </legend>
+
+	<form action="." method="POST">
+		{% csrf_token %}
+		<center>
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.nome.id_for_label }}">*Nome da Disciplina:</label>
+				<div class="controls">
+					{{ form.nome }}
+					{{ form.nome.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.professor.id_for_label }}">*Professor:</label>
+				<div class="controls">
+					{{ form.professor }}
+					{{ form.professor.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.aluno.id_for_label }}">*Alunos:</label>
+				<div class="controls">
+					{{ form.aluno }}
+					{{ form.aluno.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.serie.id_for_label }}">*Série:</label>
+				<div class="controls">
+					{{ form.serie }}
+					{{ form.serie.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.turma.id_for_label }}">*Turma:</label>
+				<div class="controls">
+					{{ form.turma }}
+					{{ form.turma.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.turno.id_for_label }}">*Turno:</label>
+				<div class="controls">
+					{{ form.turno }}
+					{{ form.turno.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.ano.id_for_label }}">*Ano:</label>
+				<div class="controls">
+					{{ form.ano }}
+					{{ form.ano.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.nota1.id_for_label }}">*Nota 1:</label>
+				<div class="controls">
+					{{ form.nota1 }}
+					{{ form.nota1.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.nota2.id_for_label }}">*Nota 2:</label>
+				<div class="controls">
+					{{ form.nota2 }}
+					{{ form.nota2.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.nota3.id_for_label }}">*Nota 3:</label>
+				<div class="controls">
+					{{ form.nota3 }}
+					{{ form.nota3.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.nota4.id_for_label }}">*Nota 4:</label>
+				<div class="controls">
+					{{ form.nota4 }}
+					{{ form.nota4.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.recuperacao1.id_for_label }}">*Recuperação 1:</label>
+				<div class="controls">
+					{{ form.recuperacao1 }}
+					{{ form.recuperacao1.errors }}
+				</div>
+			</div>
+
+			<div class = "control-group">  
+				<label class = "control-label" for="{{ form.recuperacao2.id_for_label }}">*Recuperação 2:</label>
+				<div class="controls">
+					{{ form.recuperacao2 }}
+					{{ form.recuperacao2.errors }}
+				</div>
+			</div>
+
+
+			
+			<br> <br>
+              
+			<button type="submit" class="btn btn-primary">Efetuar cadastro</button>
+				
+			<br><br>
+
+		</center>
+	</form>
+			
+			{% endblock content %}

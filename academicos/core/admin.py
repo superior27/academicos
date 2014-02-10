@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from academicos.core.models import Student, Teacher, Class, Grade, Matriculation
+from academicos.core.models import Student, Teacher, Class, Grade, Matriculation, Disciplina
 from django.contrib import admin
 
 class StudentAdmin(admin.ModelAdmin):
@@ -27,8 +27,13 @@ class MatriculationAdmin(admin.ModelAdmin):
 	fields = ('students','grade')
 	list_display = ('grade',)
 
+class DisciplinaAdmin(admin.ModelAdmin):
+	fields = ('nome','nota1','nota2','nota3','nota4','recuperacao1','recuperacao2','professor','serie','turma','turno','ano','aluno','media','carga_horaria')
+	list_display = ('nome','serie','turma','turno','ano',)
+
 admin.site.register(Student,StudentAdmin)
 admin.site.register(Teacher,TeacherAdmin)
 admin.site.register(Class, ClassAdmin)
 admin.site.register(Grade, GradeAdmin)
 admin.site.register(Matriculation,MatriculationAdmin)
+admin.site.register(Disciplina,DisciplinaAdmin)

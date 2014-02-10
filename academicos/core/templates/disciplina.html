@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% block navbar %}
+       <li>
+                            <a href="/">Início</a>
+                        </li>
+                        
+                        <li class="active">
+                            <a href="/menu_aluno">Aluno</a>
+
+                        </li>
+
+                        <li >
+                            <a href="/menu_adm">Administração</a>
+                        </li>
+                        <li>
+                            <a href="/menu_professor">Professor</a>
+                        </li>
+
+                         <li>
+                            <a href="/menu_secretaria">Secretaria</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/logout/">Sair</a>
+                        </li>
+                    
+{% endblock navbar %}
+
+{% block content %}
+
+	<h2>
+		<center>{{form.nome}}</center>
+	</h2>
+	<legend> </legend>
+
+	<center>
+        <h3>
+            <div class="container bs-docs-container">
+            <div class="row">
+                <div class="col-lg-16">
+                    <div class="bs-sidebar">
+                        <ul class="nav bs-sidenav">
+             
+                            
+                
+                <label class = "control-group">Professor:</label>
+
+                <div class = "control-group">
+                    {{ form.professor }}
+                    {{ form.professor.errors }}
+                </div>
+            </br>
+          
+
+            
+
+            <div class = "control-group">  
+                <label class = "control-label" >Série:</label>
+                <div class="controls">
+                    {{ form.get_serie_display }}
+                    {{ form.serie.errors }}
+                </div>
+            </div>
+        </br>
+
+            <div class = "control-group">  
+                <label class = "control-label">Turma:</label>
+                <div class="controls">
+                    {{ form.turma }}
+                    {{ form.turma.errors }}
+                </div>
+            </div>
+        </br>
+
+            <div class = "control-group">  
+                <label class = "control-label">Turno:</label>
+                <div class="controls">
+                    {{ form.get_turno_display }}
+                    {{ form.turno.errors }}
+                </div>
+            </div>
+        </br>
+
+            <div class = "control-group">  
+                <label class = "control-label" >Ano:</label>
+                <div class="controls">
+                    {{ form.ano }}
+                    {{ form.ano.errors }}
+                </div>
+            </div>
+        </br>
+
+            <div class = "control-group">  
+                <label class = "control-label">Nota 1:</label>
+                <div class="controls">
+                    {{ form.nota1 }}
+                    {{ form.nota1.errors }}
+                </div>
+            </div>
+        </br>
+
+           <div class = "control-group">  
+                <label class = "control-label">Nota 2:</label>
+                <div class="controls">
+                    {{ form.nota2 }}
+                    {{ form.nota2.errors }}
+                </div>
+            </div>
+        </br>
+
+ 
+
+           <div class = "control-group">  
+                <label class = "control-label">Nota 3:</label>
+                <div class="controls">
+                    {{ form.nota3 }}
+                    {{ form.nota3.errors }}
+                </div>
+            </div>
+        </br>
+
+        <div class = "control-group">  
+                <label class = "control-label">Nota 4:</label>
+                <div class="controls">
+                    {{ form.nota4 }}
+                    {{ form.nota4.errors }}
+                </div>
+            </div>
+        </br>
+
+           <div class = "control-group">  
+                <label class = "control-label" >Recuperação 1:</label>
+                <div class="controls">
+                    {{ form.recuperacao1 }}
+                    {{ form.recuperacao1.errors }}
+                </div>
+            </div>
+        </br>
+
+            
+
+         <div class = "control-group">  
+                <label class = "control-label" >Média:</label>
+                <div class="controls">
+                    {{ form.media }}
+                    {{ form.media.errors }}
+                </div>
+            </div>
+        </br>
+
+         <div class = "control-group">  
+                <label class = "control-label" >Carga Horária:</label>
+                <div class="controls">
+                    {{ form.carga_horaria }}
+                    {{ form.carga_horaria.errors }}
+                </div>
+            </div>
+        </br>
+                        
+
+        </h3>
+    </div>
+</center>
+    
+
+	
+			{% endblock content %}

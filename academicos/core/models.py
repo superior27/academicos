@@ -4,6 +4,23 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 import datetime
 
+
+class Teacher(models.Model):
+    name = models.CharField(_(u'Nome'),max_length=100)
+    date_birth = models.DateField(_(u'Data de Nascimento'))
+    rg = models.CharField(max_length=11)
+    cpf = models.CharField(max_length=11)
+    phone = models.CharField(_(u"Telefone"),max_length=13)
+    email = models.EmailField(_(u"E-mail"))
+    user = models.ForeignKey(User,blank=True,null=True)
+    
+    u"""Como o meu objeto será visto"""
+    def __unicode__(self):
+        return u'%s' % (self.name)
+
+
+
+
 class Student(models.Model):
     
     GENDER_CHOICE = (
@@ -11,7 +28,7 @@ class Student(models.Model):
         ('F','Feminino'),)
 
     name = models.CharField(_(u'Nome'), max_length=100)
-    matriculation_number = models.CharField(_(u'Número de Matrícula'),max_length=100)
+    matriculation_number = models.CharField(_(u'Número de Matrícula'),max_length=100,blank=True,null=True)
     date_birth = models.DateField(_(u'Data de Nascimento'))
     gender = models.CharField(max_length=1, choices=GENDER_CHOICE)
     street = models.CharField(max_length=100)
@@ -46,23 +63,67 @@ class Student(models.Model):
     responsible_financial_cpf = models.CharField(max_length=11)
     responsible_financial_date_birth = models.DateField(_('data de nascimento do responsavel financeiro'))
     responsible_financial_email = models.EmailField(blank=True,null=True)
-    user = models.ForeignKey(User)
-    observation = models.TextField(max_length=100,blank=True,null=True)
+    user = models.ForeignKey(User,blank=True,null=True)
+    observation = models.TextField(max_length=100,blank=True,null=True)    
     def __unicode__(self):
         return u'%s - %s' % (self.name,self.matriculation_number)
 
-class Teacher(models.Model):
-    name = models.CharField(_(u'Nome'),max_length=100)
-    date_birth = models.DateField(_(u'Data de Nascimento'))
-    rg = models.CharField(max_length=11)
-    cpf = models.CharField(max_length=11)
-    phone = models.CharField(_(u"Telefone"),max_length=13)
-    email = models.EmailField(_(u"E-mail"))
-    user = models.ForeignKey(User)
-    
-    u"""Como o meu objeto será visto"""
+
+class Disciplina(models.Model):
+    TURNO_CHOICES = (
+        ('M',u'Manhã'),
+        ('V',u'Tarde'),
+        ('N',u'Noite'),
+
+        )
+    SERIE_CHOICES = (
+        (u'M1',u'Maternal 1'),
+        (u'M2',u'Maternal 2'),
+        (u'J1',u'Jardim 1'),
+        (u'J2',u'Jardim 2'),
+        (u'F1',u'1º Ano Fundamental'),
+        (u'F2',u'2º Ano Fundamental'),
+        (u'F3',u'3º Ano Fundamental'),
+        (u'F4',u'4º Ano Fundamental'),
+        (u'F5',u'5º Ano Fundamental'),
+        (u'F6',u'6º Ano Fundamental'),
+        (u'F7',u'7º Ano Fundamental'),
+        (u'F8',u'8º Ano Fundamental'),
+        (u'F9',u'9º Ano Fundamental'),
+        (u'M1',u'1º Ano Ensino Médio'),
+        (u'M2',u'2º Ano Ensino Médio'),
+        (u'M3',u'3º Ano Ensino Médio'),
+        (u'O',u'Outra'),
+        )
+    TURMA_CHOICES = (
+        ('A','A'),
+        ('B','B'),
+        ('C','C'),
+        ('D','D'),
+        ('E','E'),
+
+        ) 
+    nome = models.CharField(_(u'Nome'),max_length=100)
+    nota1 = models.DecimalField(_(u'Nota 1'),max_digits=10,decimal_places=3,blank=True,null=True)
+    nota2 = models.DecimalField(_(u'Nota 2'),max_digits=10,decimal_places=3,blank=True,null=True)
+    nota3 = models.DecimalField(_(u'Nota 3'),max_digits=10,decimal_places=3,blank=True,null=True)
+    nota4 = models.DecimalField(_(u'Nota 4'),max_digits=10,decimal_places=3,blank=True,null=True)
+    recuperacao1 = models.DecimalField(_(u'Recuperação'),max_digits=10,decimal_places=3,blank=True,null=True)
+    recuperacao2 = models.DecimalField(_(u'Recuperação 2'),max_digits=10,decimal_places=3,blank=True,null=True)
+    media = models.DecimalField(_(u'Média'),max_digits=10,decimal_places=3,blank=True,null=True)
+    carga_horaria = models.DecimalField(_(u'Carga Horária'),max_digits=10,decimal_places=3,blank=True,null=True)
+    professor = models.ForeignKey(Teacher)
+    turno = models.CharField(_(u'Turno'),max_length=2,choices=TURNO_CHOICES)
+    serie = models.CharField(_(u'Série'),max_length=3,choices=SERIE_CHOICES)
+    turma = models.CharField(_(u'Turma'),max_length=1,choices=TURMA_CHOICES)
+    ano = models.CharField(_(u'Ano'),max_length=4)
+    aluno = models.ForeignKey(Student,blank=True,null=True)
     def __unicode__(self):
-        return u'%s' % (self.name)
+        return u'%s - %s - %s -%s - %s' % (self.nome,self.serie,self.turma,self.turno,self.ano)
+
+
+
+
 
 class Class(models.Model):
     name = models.CharField(_(u'Nome'),max_length=100)
@@ -97,3 +158,6 @@ class MyUser(models.Model):
     Aqui é a Grade
     
     grade = models.ForeignKey(Grade)"""
+
+
+
