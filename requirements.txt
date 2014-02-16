@@ -3,4 +3,4 @@ dj-database-url==0.2.1
 Unipath==1.0
 gunicorn==0.17.2
 psycopg2
-pyboleto
+pyboleto==0.2.11
