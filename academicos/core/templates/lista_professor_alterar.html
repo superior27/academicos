@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block navbar %}
-	
-                         <li>
+    
+                       <li>
                             <a href="/">Início</a>
                         </li>
                         
-                        <li class="active">
+                        <li >
                             <a href="/menu_aluno">Aluno</a>
 
                         </li>
@@ -17,7 +17,7 @@
                             <a href="/menu_professor">Professor</a>
                         </li>
 
-                         <li>
+                         <li class="active">
                             <a href="/menu_secretaria">Secretaria</a>
                         </li>
                         
@@ -30,27 +30,34 @@
 {% block content %}
 
 	<h2>
-		<center>Bem Vindo {{user.username}}</center>
+		<center>Meus Alunos</center>
 	</h2>
 	<legend> </legend>
-<center>
+
+	<center>
     <h3>
-	<div class="container bs-docs-container">
+    <div class="container bs-docs-container">
             <div class="row">
                 <div class="col-lg-16">
                     <div class="bs-sidebar">
                         <ul class="nav bs-sidenav">
-                            <li>                  
-                                <a href="/lista_disciplina_aluno">Visualizar Notas</a>
-                            </li>
-                           
-
-                        </ul>
+		{% for professor in lista_professor %}
+			<div>
+				<a href = /professor_alterar/{{professor.id}}>
+					{{ professor.name }}
+				</a>
+			</div>
+		{% endfor %}
+	 </ul>
                     </div>
                 </div>
 
 <div class="container"> 
 </h3>
 </center>
+
+
+
+
 	
 			{% endblock content %}

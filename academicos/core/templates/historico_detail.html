@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootstrap.responsive.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/new.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/teste.css" rel="stylesheet">   
+        <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet"> 
+        </head> 	
+
+
+<body>
+      
+        
+
+ <center><img src = "{{ STATIC_URL }}img/logo.jpg"/> 
+ </br>
+ </br>
+ <h2>
+ 	Centro Educacional Profª Marilene França
+ </h2>
+ Rua: Olavo Bilac, 328 - Indianópolis - Caruaru - PE
+</br>
+ Fone: 3725-4070 (sede I) e 3095-7937 (sede II)      CNPJ:09.654.604/0001-26
+</br>
+Educação Infantil, Ensino Fundamental e Ensino Médio
+</br>
+Port. De Aut. De Funcionamento: Port. 9138 Publicada em: 08. 11. 2010
+</br>
+Cadastro Escolar Nº: P. 405. 072
+</br>
+</br>
+<u><b><h3>HISTÓRICO ESCOLAR</h3></b></u>
+</br>
+<h4>
+
+
+<label>Nome:</label>
+
+{{form.name}} &nbsp-&nbsp
+<label>Nº de Matrícula:</label>
+{{form.matriculation_number}}&nbsp-&nbsp
+<label>Nome do Responsável Financeiro:</label>
+{{form.responsible_financial_name}} &nbsp-&nbsp
+<label>CPF do Responsável Financeiro:</label>
+{{form.responsible_financial_cpf}}
+</h4>
+</br>
+<label>Disciplina &nbsp-&nbsp</label>
+<label>Série &nbsp-&nbsp</label>
+<label>Média &nbsp-&nbsp</label>
+<label>Frequência &nbsp-&nbsp</label>
+</br>
+{% for disciplina in lista_disciplina %}
+	{{disciplina.nome}} &nbsp-&nbsp
+	{{disciplina.get_serie_display}}&nbsp-&nbsp
+	{{disciplina.media}}&nbsp-&nbsp
+	{{disciplina.carga_horaria}}&nbsp-&nbsp
+</br>
+{% endfor %}
+
+</br></br></br>
+
+______________________________________  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ______________________________________
+</br>
+
+&nbspAssinatura do Secretário &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Assinatura da Diretora
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootstrap.responsive.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/new.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/teste.css" rel="stylesheet">   
+        <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet"> 
+        </head> 	
+
+
+<body>
+      
+        
+
+ <center><img src = "{{ STATIC_URL }}img/logo.jpg"/> 
+ </br>
+ </br>
+ <h2>
+ 	Centro Educacional Profª Marilene França
+ </h2>
+ Rua: Olavo Bilac, 328 - Indianópolis - Caruaru - PE
+</br>
+ Fone: 3725-4070 (sede I) e 3095-7937 (sede II)      CNPJ:09.654.604/0001-26
+</br>
+Educação Infantil, Ensino Fundamental e Ensino Médio
+</br>
+Port. De Aut. De Funcionamento: Port. 9138 Publicada em: 08. 11. 2010
+</br>
+Cadastro Escolar Nº: P. 405. 072
+</br>
+</br>
+<u><b><h3>REQUERIMENTO DE MATRÍCULA - ANO: {{data.year}}</h3></b></u>
+</br>
+</br>
+Requerimento de Mátricula nº {{form.matriculation_number}}, {{resto}}, declanrando aceitar as disposições
+expressas no Regimento e me responsabilizando pela autenticidade dos documentos entregues neste ato.
+
+</center>
+</br>
+
+<p align = "Right">Caruaru, {{data}} </p>
+</br>
+<center><h4><b>DADOS PESSOAIS DO ALUNO</b></h4></center>
+</br>
+<label>Nome:</label> &nbsp {{form.name}}
+&nbsp
+<label>Sexo:</label> &nbsp {{form.get_gender_display}}
+</br>
+<label>Endereço:</label> &nbsp {{form.street}}
+&nbsp
+<label>Nº:</label> &nbsp {{form.street_number}}
+&nbsp
+<label>Complemento</label> &nbsp {{form.street_complement}}
+</br>
+<label>Bairro:</label> &nbsp {{form.neighborhood}}
+&nbsp
+<label>Cidade:</label> &nbsp {{form.city}}
+&nbsp
+<label>Estado:</label> &nbsp {{form.state}}
+</br>
+<label>Data de Nascimento:</label> &nbsp {{form.date_birth}}</br> 
+<label>Fone:</label> &nbsp {{form.phone}}
+&nbsp
+<label>Alergias:</label> &nbsp {{form.allergy}}
+&nbsp
+<label>Plano de Saúde:</label> &nbsp {{form.health_plan}}
+</br>
+<label>Nome para Emergências:</label> &nbsp {{form.emergency_name}}
+<label>Telefone para Emergências:</label> &nbsp {{form.emergency_phone}}
+&nbsp
+</br>
+<label>Nome Responsável Financeiro</label> &nbsp {{form.responsible_financial_name}} &nbsp
+<label>RG</label> &nbsp {{form.responsible_financial_rg}}
+&nbsp
+<label>CPF</label> &nbsp {{form.responsible_financial_cpf}}
+&nbsp
+<label>Data de Nascimento</label> &nbsp {{form.responsible_financial_date_birth}}
+</br></br></br>
+
+______________________________________  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ______________________________________
+</br>
+
+&nbspAssinatura do Secretário &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Assinatura da Diretora
+
+</body>
+</html>

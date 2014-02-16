@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 import datetime
 
 
+
 class Teacher(models.Model):
     name = models.CharField(_(u'Nome'),max_length=100)
     date_birth = models.DateField(_(u'Data de Nascimento'))
@@ -64,7 +65,8 @@ class Student(models.Model):
     responsible_financial_date_birth = models.DateField(_('data de nascimento do responsavel financeiro'))
     responsible_financial_email = models.EmailField(blank=True,null=True)
     user = models.ForeignKey(User,blank=True,null=True)
-    observation = models.TextField(max_length=100,blank=True,null=True)    
+    observation = models.TextField(max_length=100,blank=True,null=True)
+    financial = models.TextField(_(u'Situação Financeira'),max_length=1000000,blank=True,null=True)    
     def __unicode__(self):
         return u'%s - %s' % (self.name,self.matriculation_number)
 

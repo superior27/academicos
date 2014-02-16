@@ -123,6 +123,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'academicos.core',
+    'pyboleto.django'
+
 )
 
 # A sample logging configuration. The only tangible logging

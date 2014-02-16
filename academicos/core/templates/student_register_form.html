@@ -1,35 +1,31 @@
 		{% extends 'base.html' %}
 		{% block navbar %}
-							<li >
+	
+                         <li>
                             <a href="/">Início</a>
                         </li>
                         
                         <li >
-                            <a href="/register">Cadastro de Usuários    </a>
+                            <a href="/menu_aluno">Aluno</a>
 
                         </li>
 
-                        <li class="active" >
-                            <a href="/student_register">Cadastro de Alunos</a>
+                        <li >
+                            <a href="/menu_secretaria">Administração</a>
                         </li>
                         <li>
-                            <a href="/teacher_register">Cadastro de Professores</a>
+                            <a href="/menu_professor">Professor</a>
                         </li>
 
-                         <li >
-                            <a href="/class_register">Cadastro de Disciplinas</a>
-                        </li>
-                         <li >
-                            <a href="/grade_register">Cadastro de Turmas</a>
-                        </li>
-                         <li >
-                            <a href="/matriculation_register">Matrícula</a>
+                         <li class="active">
+                            <a href="/menu_secretaria">Secretaria</a>
                         </li>
                         
                         <li>
                             <a href="/logout/">Sair</a>
                         </li>
-		{% endblock navbar %}
+                    
+{% endblock navbar %}
 
 		{% block content %}
 		
@@ -50,16 +46,6 @@
 					<div class="controls">
 						{{ form.name }}
 						{{ form.name.errors }}
-					</div>
-				</div>
-
-
-				<div class = "control-group">  
-					<label class = "control-label" for="{{ form.matriculation_number.id_for_label }}">*Número de Matrícula:
-					</label>
-					<div class="controls">
-						{{ form.matriculation_number }}
-						{{ form.matriculation_number.errors }}
 					</div>
 				</div>
 
@@ -264,7 +250,7 @@
 			  	<br>
 					
 					<div class = "control-group">
-				<label class = "control-label" for="{{ form.mother_name.id_for_label }}">*Nome da Mãe:</label>
+				<label class = "control-label" for="{{ form.mother_name.id_for_label }}">Nome da Mãe:</label>
 				<div class="controls">
 				{{ form.mother_name }}
 				{{ form.mother_name.errors }}
@@ -273,7 +259,7 @@
 					
 
 					<div class = "control-group">
-				<label class = "control-label" for="{{ form.mother_phone.id_for_label }}">*Telefone da Mãe:</label>
+				<label class = "control-label" for="{{ form.mother_phone.id_for_label }}">Telefone da Mãe:</label>
 				<div class="controls">
 				{{ form.mother_phone }}
 				{{ form.mother_phone.errors }}
@@ -281,7 +267,7 @@
 				</div>
 
 					<div class = "control-group">
-				<label class = "control-label" for="{{ form.mother_rg.id_for_label }}">*RG da Mãe:</label>
+				<label class = "control-label" for="{{ form.mother_rg.id_for_label }}">RG da Mãe:</label>
 				<div class="controls">
 				{{ form.mother_rg }}
 				{{ form.mother_rg.errors }}
@@ -289,7 +275,7 @@
 				</div>
 
 					<div class = "control-group">
-				<label class = "control-label" for="{{ form.mother_cpf.id_for_label }}">*CPF da Mãe:</label>
+				<label class = "control-label" for="{{ form.mother_cpf.id_for_label }}">CPF da Mãe:</label>
 				<div class="controls">
 				{{ form.mother_cpf }}
 				{{ form.mother_cpf.errors }}
@@ -297,7 +283,7 @@
 				</div>
 
 					<div class = "control-group">
-				<label class = "control-label" for="{{ form.mother_profession.id_for_label }}">*Profissão da Mãe:</label>
+				<label class = "control-label" for="{{ form.mother_profession.id_for_label }}">Profissão da Mãe:</label>
 				<div class="controls">
 				{{ form.mother_profession }}
 				{{ form.mother_profession.errors }}
@@ -306,7 +292,7 @@
 
 
 					<div class = "control-group">
-				<label class = "control-label" for="{{ form.mother_instruction.id_for_label }}">*Grau de Instrução da Mãe:</label>
+				<label class = "control-label" for="{{ form.mother_instruction.id_for_label }}">Grau de Instrução da Mãe:</label>
 				<div class="controls">
 				{{ form.mother_instruction }}
 				{{ form.mother_instruction.errors }}
@@ -314,7 +300,7 @@
 				</div>
 
 					<div class = "control-group">
-				<label class = "control-label" for="{{ form.mother_date_birth.id_for_label }}">*Data de Nascimento da Mãe:</label>
+				<label class = "control-label" for="{{ form.mother_date_birth.id_for_label }}">Data de Nascimento da Mãe:</label>
 				<div class="controls">
 				{{ form.mother_date_birth }}
 				{{ form.mother_date_birth.errors }}
@@ -383,13 +369,15 @@
 				</div>
 				</div>
 
-					<div class = "control-group">
-				<label class = "control-label" for="{{ form.user.id_for_label }}">*Nome do Usuário:</label>
+				<div class = "control-group">
+				<label class = "control-label">Observações:</label>
 				<div class="controls">
-				{{ form.user }}
-				{{ form.user.errors }}
+				{{ form.financial }}
+				{{ form.financial.errors }}
 				</div>
 				</div>
+
+					
 
 
 

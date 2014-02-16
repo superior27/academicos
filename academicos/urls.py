@@ -34,6 +34,25 @@ urlpatterns = patterns('academicos.core.views',
     url(r'^menu_professor/$','menu_professor',name='menu_professor'),
     url(r'^lista_disciplina_professor/$','lista_disciplina_professor',name='lista_disciplina_professor'),
     url(r'^disciplina_alterar/(\d+)/$','disciplina_alterar',name='disciplina_alterar'),
+    url(r'^menu_secretaria/$','menu_secretaria',name='menu_secretaria'),
+    url(r'^lista_alunos_matricula/$','lista_alunos_matricula',name='lista_alunos_matricula'),
+    url(r'^matricula_detail/(\d+)/$','matricula_detail',name='matricula_detail'),
+    url(r'^lista_alunos_historico/$','lista_alunos_historico',name='lista_alunos_historico'),
+    url(r'^historico_detail/(\d+)/$','historico_detail',name='historico_detail'),
+    url(r'^lista_alunos_financeiro/$','lista_alunos_financeiro',name='lista_alunos_financeiro'),
+    url(r'^financeiro_alterar/(\d+)/$','financeiro_alterar',name='financeiro_alterar'),
+    url(r'^lista_aluno_alterar/$','lista_aluno_alterar',name='lista_aluno_alterar'),
+    url(r'^aluno_alterar/(\d+)/$','aluno_alterar',name='aluno_alterar'),
+    url(r'^lista_professor_alterar/$','lista_professor_alterar',name='lista_professor_alterar'),
+    url(r'^professor_alterar/(\d+)/$','professor_alterar',name='professor_alterar'),
+    url(r'^lista_disciplina_adm/$','lista_disciplina_adm',name='lista_disciplina_adm'),
+    url(r'^lista_aluno_boleto/$','lista_aluno_boleto',name='lista_aluno_boleto'),
+
+
+
+
+    url(r'^print_santander/$','print_santander',name='print_santander'),
+
 )
 
 from django.conf import settings

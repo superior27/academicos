@@ -2,10 +2,13 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Permission
-from models import Student, Teacher, Class, Grade, Matriculation, Disciplina
+from models import Student, Teacher, Class, Grade, Matriculation, Disciplina, MyUser
 from django.core.validators import EMPTY_VALUES
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
+from django.contrib.contenttypes.models import ContentType
+
+
 
 
 class RegisterForm(UserCreationForm):
@@ -60,7 +63,7 @@ class PhoneField(forms.MultiValueField):
 
 
 class StudentRegisterForm(forms.ModelForm):
-    #phone = PhoneField(label=_('Telefone'),)
+    
     
     class Meta:
         model = Student
@@ -91,15 +94,26 @@ class MatriculationRegisterForm(forms.ModelForm):
         model = Matriculation
         fields = 'students','grade'
 
-class DisciplinaRegisterForm(forms.ModelForm):    
+class DisciplinaRegisterForm(forms.ModelForm):
+    content_type = ContentType.objects.get_for_model(MyUser)
+    permission = Permission.objects.get(content_type=content_type, codename='student')
+    aluno = forms.ModelMultipleChoiceField(queryset = Student.objects.all())
     class Meta:
         model = Disciplina
-        fields = 'nome','professor','aluno','serie','turma','turno','ano'
+        fields = 'nome','professor','serie','turma','turno','ano'
 
 class DisciplinaAlterarForm(forms.ModelForm):
     class Meta:
         model = Disciplina
         fields = 'nota1','nota2','nota3','nota4','recuperacao1','carga_horaria'
+
+class FinanceiroAlterarForm(forms.ModelForm):
+    
+    class Meta:
+        model = Student
+        fields = 'name','financial'
+        
+
 
 
 """class turmasForm(forms.ModelForm):
